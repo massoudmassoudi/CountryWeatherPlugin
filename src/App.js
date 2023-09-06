@@ -7,6 +7,7 @@ import { Icon } from "leaflet";
 // create custom icon
 const customIcon = new Icon({
   iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
+  
   iconSize: [38, 38] 
 });
 
@@ -22,7 +23,7 @@ const markers = [
    
   },
   {
-    geocode: [19.076090 , 72.877426] // Mumbai
+    geocode: [18.987807 , 72.836447] // Mumbai
    
   },
   {
@@ -70,7 +71,7 @@ const markers = [
 export default function App() {
   return (
     <MapContainer center={[20.5937, 78.9629]} zoom={5}>
-      {/* OPEN STREEN MAPS TILES */}
+      {/* OPEN STREET MAPS TILES */}
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

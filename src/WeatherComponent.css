@@ -1,6 +1,6 @@
 
 .weather-icon {
-   color: white;
+   color: rgb(194, 23, 71);
     font-size: 48px; 
     margin-bottom: 20px; 
   }
@@ -9,8 +9,8 @@
     border: 2px solid #ccc; 
     padding: 20px; 
     border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    background-color: black; 
+    box-shadow: 0 4px 6px rgba(206, 119, 119, 0.1); 
+    background-color: rgb(180, 88, 88); 
     color: white;
     text-align: center; 
   }
@@ -28,7 +28,7 @@
   }
 
   .leaflet-popup-content-wrapper{
-    background-color: black !important;
+    background-color: rgb(111, 150, 211) !important;
     color: white !important;
 
   }

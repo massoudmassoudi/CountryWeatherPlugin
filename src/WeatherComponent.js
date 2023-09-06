@@ -7,10 +7,10 @@ const WeatherComponent = ({ coordinates }) => {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
-    // Fetch weather data when the component mounts
-    const fetchWeatherData = async () => {
+    // Load weather data when the component mounts
+    const loadWeatherData  = async () => {
       try {
-        const apiKey = "76c535d555a455c5359080efc8670642"; //TODO Add this in .env 
+        const apiKey = "76c535d555a455c5359080efc8670642"; 
         const response = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates[0]}&lon=${coordinates[1]}&appid=${apiKey}`
         );
@@ -20,17 +20,20 @@ const WeatherComponent = ({ coordinates }) => {
       }
     };
 
-    fetchWeatherData();
+    loadWeatherData();
   }, [coordinates]);
 
   if (!weatherData) {
     return <div>Loading weather data...</div>;
   }
 
- // Convert temperature from Kelvin to Celsius
- const temperatureCelsius = (weatherData.main.temp - 273.15).toFixed(2);
+  // Convert from Kelvin to Celsius
+  const temperatureCelsius = (weatherData.main.temp - 273.15).toFixed(2);
 
- const weatherIcons = {
+  const minTemperature = (weatherData.main.temp_min - 273.15).toFixed(2);
+  const maxTemperature = (weatherData.main.temp_max - 273.15).toFixed(2);
+
+  const weatherIcons = {
     Clear: <WiDaySunny />,
     Rain: <WiRain />,
     Clouds: <WiCloud />,
@@ -41,11 +44,13 @@ const WeatherComponent = ({ coordinates }) => {
 
   return (
     <div>
-      <h3>Weather in {weatherData.name}</h3>
+      <h3>{weatherData.name}</h3>
       {weatherIcon && <div className="weather-icon">{weatherIcon}</div>}
       <p>Temperature: {temperatureCelsius}°C</p>
-      <p>Weather Conditions: {weatherData.weather[0].description}</p>
-    </div>
+      <p>Min: {minTemperature}°C</p>
+      <p>Max: {maxTemperature}°C</p>
+      <p>Weather: {weatherData.weather[0].description}</p>
+    </div>
   );
 };
 
