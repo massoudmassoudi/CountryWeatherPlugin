@@ -4,16 +4,19 @@ import { WiDaySunny, WiRain, WiCloud, WiDayHaze } from "react-icons/wi";
 import "./WeatherComponent.css";
 
 const WeatherComponent = ({ coordinates }) => {
+  
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
     // Load weather data when the component mounts
     const loadWeatherData  = async () => {
       try {
-        const apiKey = "76c535d555a455c5359080efc8670642"; 
+        const apiKey = process.env.REACT_APP_API_KEY;
+        console.log(apiKey);
         const response = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates[0]}&lon=${coordinates[1]}&appid=${apiKey}`
         );
+        // getting weather data response here 
         setWeatherData(response.data);
       } catch (error) {
         console.error("Error fetching weather data:", error);
@@ -29,10 +32,10 @@ const WeatherComponent = ({ coordinates }) => {
 
   // Convert from Kelvin to Celsius
   const temperatureCelsius = (weatherData.main.temp - 273.15).toFixed(2);
-
   const minTemperature = (weatherData.main.temp_min - 273.15).toFixed(2);
   const maxTemperature = (weatherData.main.temp_max - 273.15).toFixed(2);
 
+  // defined weather icons 
   const weatherIcons = {
     Clear: <WiDaySunny />,
     Rain: <WiRain />,

@@ -1,34 +1,36 @@
-
 .weather-icon {
-   color: rgb(194, 23, 71);
-    font-size: 48px; 
-    margin-bottom: 20px; 
-  }
-  
+  font-size: 48px; 
+  margin-bottom: 25px; 
+  height: 25px;
+}
+
 .weather-info-container {
-    border: 2px solid #ccc; 
-    padding: 20px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(206, 119, 119, 0.1); 
-    background-color: rgb(180, 88, 88); 
-    color: white;
-    text-align: center; 
-  }
-  
-  
-  .weather-info-container h3 {
-    font-size: 24px; 
-    margin-bottom: 10px; 
-  }
-  
-  .weather-info-container p {
-    font-size: 18px; 
-    margin: 8px 0; 
+  border: 2px solid #ccc; 
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(206, 119, 119, 0.1); 
+  background-color: rgb(180, 88, 88); 
+  color: white;
+  text-align: center; 
+}
 
-  }
 
-  .leaflet-popup-content-wrapper{
-    background-color: rgb(111, 150, 211) !important;
-    color: white !important;
+.weather-info-container h3 {
+  font-size: 24px; 
+  margin-bottom: 10px; 
+}
 
-  }
+.weather-info-container p {
+  font-size: 18px; 
+  margin: 8px 0; 
+
+}
+
+.leaflet-popup-content-wrapper{
+  color: white !important;
+  background-color: #039be5 !important;
+}
+
+.leaflet-popup-content{
+  line-height:0.8;
+}
