@@ -1,6 +1,6 @@
 # Country Weather Plugin  
 <br/>
-![Application screenshot](./public/weatherApp.jpg)
+![Application screenshot](https://github.com/massoudmassoudi/CountryWeatherPlugin/blob/master/public/weatherApp.JPG?raw=true)
 <br/>
 <br/>
 
