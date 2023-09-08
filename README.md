@@ -3,6 +3,8 @@
 <br>
 This React application utilizes the Leaflet library to display a map with markers representing different cities. When you click on a marker, it provides you with real-time weather information for that city.
 
+![weatherapp](https://github.com/massoudmassoudi/CountryWeatherPlugin/assets/20577787/80872c02-c28b-4d0d-b19b-6aac2f9e7111)
+
 
 ## ⚡ Installation
 
